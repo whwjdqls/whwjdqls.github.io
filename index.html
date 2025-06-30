@@ -1,6 +1,228 @@
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+
+    <title>Jungbin Cho</title>
+
+    <meta name="author" content="Jungbin Cho">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon / external stylesheet (keep if you have them) -->
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+    <!-- One small rule to keep thumbnails from being squished -->
+    <style>
+      .paper-img {
+        max-width: 160px;   /* fits two-column layout */
+        height: auto;       /* preserve aspect ratio */
+        object-fit: contain;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+      <tbody>
+        <tr>
+          <td>
+
+            <!-- ───────────── Header / Profile ───────────── -->
+            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+              <tbody>
+                <tr>
+                  <!-- Text column -->
+                  <td style="padding:2.5%;width:63%;vertical-align:middle;">
+                    <p class="name" style="text-align:center;">Jungbin Cho</p>
+
+                    <p>
+                      I am a master student at
+                      <a href="https://www.yonsei.ac.kr/en_sc/">Yonsei University</a>,
+                      <a href="https://mirlab.yonsei.ac.kr/">MIR Lab</a>, advised by
+                      <a href="https://yj-yu.github.io/home/">Professor Yu</a>.
+                      I received my B.S. in
+                      <a href="https://yonsei.elsevierpure.com/en/organisations/department-of-electrical-and-electronic-engineering">
+                        Electrical and Electronic Engineering
+                      </a>
+                      at the same school.
+                    </p>
+
+                    <p style="text-align:center;">
+                      <a href="mailto:whwjdqls99@yonsei.ac.kr">Email</a> &nbsp;/&nbsp;
+                      <a href="data/Jungbin-CV.pdf">CV</a> &nbsp;/&nbsp;
+                      <a href="https://scholar.google.com/citations?user=DWd9_qQAAAAJ&hl=en">Scholar</a> &nbsp;/&nbsp;
+                      <a href="https://github.com/whwjdqls">Github</a>
+                    </p>
+                  </td>
+
+                  <!-- Photo column -->
+                  <td style="padding:2.5%;width:37%;max-width:37%;vertical-align:middle;">
+                    <a href="images/Jungbin_cho_3.jpg">
+                      <img src="images/Jungbin_cho_3.jpg"
+                           alt="profile photo"
+                           style="width:100%;height:auto;object-fit:contain;">
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table> <!-- /header table -->
+
+            <!-- ───────────── News ───────────── -->
+            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+              <tbody>
+                <tr>
+                  <td style="padding:16px;">
+                    <h2>News</h2>
+                    <ul style="list-style-type:none;margin:0;padding-left:0;">
+                      <li style="margin-bottom:6px;">📍 <b>Aug 2025</b> — I will be visiting CMU as a visiting researcher.</li>
+                      <li style="margin-bottom:6px;">📝 <b>Jun 2025</b> — Our paper on motion token decoding is accepted to ICCV 2025.</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- ───────────── Research interests ───────────── -->
+            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+              <tbody>
+                <tr>
+                  <td style="padding:16px;">
+                    <h2>Research</h2>
+                    <p>
+                      My research interest centers on developing virtual environments and digital avatars that
+                      can seamlessly interact with humans. To achieve this, I am currently focusing on
+                      human motion generation, as well as human-scene and human-human interaction.
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- ───────────── Publications ───────────── -->
+            <table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+              <tbody>
+
+                <!-- DisCoRD -->
+                <tr>
+                  <td style="padding:16px;width:20%;vertical-align:middle;">
+                    <img src="images/Discord.png" class="paper-img" alt="DisCoRD thumbnail">
+                  </td>
+                  <td style="padding:8px;width:80%;vertical-align:middle;">
+                    <a href="https://arxiv.org/abs/2411.19527">
+                      <span class="papertitle">DisCoRD: Discrete Tokens to Continuous Motion via Rectified Flow Decoding</span>
+                    </a><br>
+                    <strong>Jungbin Cho</strong><sup>*</sup>, Junwan Kim<sup>*</sup>,
+                    Jisoo Kim, Minseo Kim, Mingu Kang,
+                    <a href="https://www.csehong.com/">Sungeun Hong</a>,
+                    <a href="https://ami.postech.ac.kr/members/tae-hyun-oh">Tae-Hyun Oh</a>,
+                    <a href="https://yj-yu.github.io/home/">Youngjae Yu</a><br>
+                    <em>ICCV</em>, 2025
+                    <p>Generating smooth and natural motion by decoding discrete motion tokens with rectified flow.</p>
+                  </td>
+                </tr>
+
+                <!-- DEEPTalk -->
+                <tr>
+                  <td style="padding:16px;width:20%;vertical-align:middle;">
+                    <img src="images/DEEPTalk.png" class="paper-img" alt="DEEPTalk thumbnail">
+                  </td>
+                  <td style="padding:8px;width:80%;vertical-align:middle;">
+                    <a href="https://arxiv.org/abs/2408.06010">
+                      <span class="papertitle">
+                        DEEPTalk: Dynamic Emotion Embedding for Probabilistic Speech-Driven 3D Face Animation
+                      </span>
+                    </a><br>
+                    Jisoo Kim<sup>*</sup>, <strong>Jungbin Cho</strong><sup>*</sup>, Joonho Park,
+                    Soonmin Hwang, Da Eun Kim, Geon Kim,
+                    <a href="https://yj-yu.github.io/home/">Youngjae Yu</a><br>
+                    <em>AAAI</em>, 2025
+                    <p>Generating dynamic emotional talking faces using probabilistic embeddings and a temporally hierarchical motion tokenizer.</p>
+                  </td>
+                </tr>
+
+                <!-- EgoSpeak -->
+                <tr>
+                  <td style="padding:16px;width:20%;vertical-align:middle;">
+                    <img src="images/EgoSpeak.png" class="paper-img" alt="EgoSpeak thumbnail">
+                  </td>
+                  <td style="padding:8px;width:80%;vertical-align:middle;">
+                    <a href="https://arxiv.org/abs/2408.06010">
+                      <span class="papertitle">
+                        EgoSpeak: Learning When to Speak for Egocentric Conversational Agents in the Wild
+                      </span>
+                    </a><br>
+                    Junhyeok Kim, Minsoo Kim, Jiwan Chung, <strong>Jungbin Cho</strong>,
+                    Jisoo Kim, Sungwoong Kim, Gyeongbo Sim,
+                    <a href="https://yj-yu.github.io/home/">Youngjae Yu</a><br>
+                    <em>NAACL Findings</em>, 2025
+                    <p>Detecting when to speak.</p>
+                  </td>
+                </tr>
+
+                <!-- AVIN-Chat -->
+                <tr>
+                  <td style="padding:16px;width:20%;vertical-align:middle;">
+                    <img src="images/AVIN-Chat.png" class="paper-img" alt="AVIN-Chat thumbnail">
+                  </td>
+                  <td style="padding:8px;width:80%;vertical-align:middle;">
+                    <a href="https://arxiv.org/abs/2409.00012">
+                      <span class="papertitle">
+                        AVIN-Chat: An Audio-Visual Interactive Chatbot System with Emotional State Tuning
+                      </span>
+                    </a><br>
+                    Chanhyuk Park<sup>*</sup>, <strong>Jungbin Cho</strong><sup>*</sup>,
+                    Junwan Kim<sup>*</sup>, Seongmin Lee, Jungsu Kim, Sanghoon Lee<br>
+                    <em>IJCAI Demo</em>, 2024
+                    <p>A chatbot system designed for face-to-face interactions, featuring customizable virtual avatars for personalized conversations.</p>
+                  </td>
+                </tr>
+
+                <!-- VSCHH -->
+                <tr>
+                  <td style="padding:16px;width:20%;vertical-align:middle;">
+                    <img src="images/VSCHH.png" class="paper-img" alt="VSCHH thumbnail">
+                  </td>
+                  <td style="padding:8px;width:80%;vertical-align:middle;">
+                    <a href="https://openaccess.thecvf.com/content/ICCV2023W/RHWC/papers/Jang_VSCHH_2023_A_Benchmark_for_the_View_Synthesis_Challenge_of_ICCVW_2023_paper.pdf">
+                      <span class="papertitle">
+                        VSCHH 2023: A Benchmark for the View Synthesis Challenge of Human Heads
+                      </span>
+                    </a><br>
+                    Youngkyoon Jang, ..., Hyeseong Kim, <strong>Jungbin Cho</strong>, Dosik Hwang,
+                    ..., Stefanos Zafeiriou<br>
+                    <em>ICCV Workshop</em>, 2023
+                    <p>Reconstructing high-resolution 3D human heads from sparse input views.</p>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+            <!-- ───────────── Footer ───────────── -->
+            <table style="width:100%;border:0;border-spacing:0;margin:0 auto;">
+              <tbody>
+                <tr>
+                  <td>
+                    <br>
+                    <p style="text-align:right;font-size:small;">
+                      <a href="https://jonbarron.info/">Cool website template by Jon Barron</a>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
+
+<!-- <!DOCTYPE HTML>
+<html lang="en">
+  <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title>Jungbin Cho</title>
@@ -261,4 +483,4 @@ My research interest centers on developing virtual environments and digital avat
       </tr>
     </table>
   </body>
-</html>
+</html> -->
