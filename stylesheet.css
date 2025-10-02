@@ -139,3 +139,13 @@ span.highlight {
     display: inline-block;
     border-radius: 10px;
 }
+.highlight-text {
+    color: #FF69B4; /* Or any color you choose */
+}
+
+/* Optional: to make it a background highlight instead */
+.highlight-background {
+    background-color: #ffe0e0;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
