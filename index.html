@@ -8,8 +8,14 @@
     <meta name="author" content="Jungbin Cho">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Favicon / external stylesheet (keep if you have them) -->
-    <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
+    <!-- Favicon: JBC monogram in Penn Blue -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+
+    <!-- Modern type system -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
 
     <!-- One small rule to keep thumbnails from being squished -->
@@ -20,9 +26,23 @@
         object-fit: contain;
       }
     </style>
+
+    <!-- Theme preference: apply before paint to avoid flash -->
+    <script>
+      (function () {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
   </head>
 
   <body>
+    <!-- Dark-mode toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+
     <table style="width:100%;max-width:800px;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
       <tbody>
         <tr>
@@ -37,18 +57,24 @@
                     <p class="name" style="text-align:center;">Jungbin Cho</p>
 
                     <p>
-                      I am a Master’s student at
-                      <a href="https://www.yonsei.ac.kr/en_sc/">Yonsei University</a>,
-                      advised by
-                      <a href="https://yj-yu.github.io/home/">Professor Yu</a>. <br>
-                      
-                      <!-- I am currently a visiting researcher with Prof. <a href="https://www.laszlojeni.com/">Laszlo A. Jeni</a> at <a href="https://laszlojeni.com/index.html#lab">CUBE lab</a>, CMU, working on human related projects. <br> -->
-                      During my masters I was fortunate to have a chance to work with Prof. <a href="https://faculty.ucmerced.edu/mhyang/"> Ming-Hsuan Yang</a> and Prof. <a href="https://www.laszlojeni.com/">Laszlo A. Jeni</a>. I was also a visiting researcher at <a href="https://laszlojeni.com/index.html#lab">CUBE lab</a>, CMU. 
-                      <!-- I received my B.S. in
-                      <a href="https://yonsei.elsevierpure.com/en/organisations/department-of-electrical-and-electronic-engineering">
-                        Electrical and Electronic Engineering
-                      </a>
-                      from Yonsei University. -->
+                      I am an incoming Ph.D. student at the
+                      <a href="https://www.cis.upenn.edu/">University of Pennsylvania (CIS)</a>,
+                      starting Fall 2026.
+                      I am currently a Research Intern at
+                      <a href="https://www.lgresearch.ai/">LG AI Research</a>,
+                      Physical Intelligence Team. <br>
+
+                      I received my B.S. in
+                      <a href="https://yonsei.elsevierpure.com/en/organisations/department-of-electrical-and-electronic-engineering">Electrical and Electronic Engineering</a>
+                      from <a href="https://www.yonsei.ac.kr/en_sc/">Yonsei University</a>,
+                      where I was fortunate to be advised by
+                      <a href="https://yj-yu.github.io/home/">Prof. Youngjae Yu</a>
+                      and to work with
+                      <a href="https://faculty.ucmerced.edu/mhyang/">Prof. Ming-Hsuan Yang</a>
+                      and
+                      <a href="https://www.laszlojeni.com/">Prof. Laszlo A. Jeni</a>.
+                      I was also a visiting researcher at
+                      <a href="https://laszlojeni.com/index.html#lab">CUBE Lab</a>, CMU.
                     </p>
 <!-- 
                     <p style="text-align:center;">
@@ -82,29 +108,107 @@
             </table> <!-- /header table -->
 
 <!-- ───────────── News ───────────── -->
-<table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+<table class="section-wrap" style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
   <tbody>
     <tr>
       <td style="padding:16px;">
         <h2>News</h2>
-        <ul style="list-style-type:none;margin:0;padding-left:0;">
-          <li style="margin-bottom:6px;">🚀 <b>Mar&nbsp;2026</b> — I'm excited to join LG AI Research as a Research Intern in the Physical Intelligence Team!</li>
-          
-          <li style="margin-bottom:6px;">📝 <b>Mar&nbsp;2026</b> — Pri4R is out! And our paper on generating hand object interactions from text is coming soon!</li>
-          <li style="margin-bottom:6px;">📝 <b>Feb&nbsp;2026</b> — Our paper on Vision Language Action model is coming soon!</li>
-          <li style="margin-bottom:6px;">📝 <b>Nov&nbsp;2025</b> — Our paper on hand object interaction reconstruction is out.</li>
-          <li style="margin-bottom:6px;">📝 <b>Oct&nbsp;2025</b> — New paper on Scene-aware adaptation is out.</li>
-          <li style="margin-bottom:6px;">📍 <b>Aug&nbsp;2025</b> — I will be joining CMU as a visiting researcher.</li>
-          <li style="margin-bottom:6px;">📝 <b>Jun&nbsp;2025</b> — Our paper on motion token decoding is accepted to ICCV&nbsp;2025.</li>
-          <li style="margin-bottom:6px;">📝 <b>Dec&nbsp;2024</b> — Our paper on 3D human face animation accepted to AAAI&nbsp;2025.</li>
-          <li style="margin-bottom:6px;">🎓 <b>Sep&nbsp;2024</b> — I will be starting my master’s degree at Yonsei!</li>
+        <ul class="news-list">
+          <li>🚀 <span class="news-date">Mar 2026</span> — I'm excited to join LG AI Research as a Research Intern in the Physical Intelligence Team!</li>
+          <li>📝 <span class="news-date">Mar 2026</span> — Pri4R is out! And our paper on generating hand object interactions from text is coming soon!</li>
+          <li>📝 <span class="news-date">Feb 2026</span> — Our paper on Vision Language Action model is coming soon!</li>
+          <li>📝 <span class="news-date">Nov 2025</span> — Our paper on hand object interaction reconstruction is out.</li>
+          <li>📝 <span class="news-date">Oct 2025</span> — New paper on Scene-aware adaptation is out.</li>
+          <li>📍 <span class="news-date">Aug 2025</span> — I will be joining CMU as a visiting researcher.</li>
+          <li>📝 <span class="news-date">Jun 2025</span> — Our paper on motion token decoding is accepted to ICCV&nbsp;2025.</li>
+          <li>📝 <span class="news-date">Dec 2024</span> — Our paper on 3D human face animation accepted to AAAI&nbsp;2025.</li>
+          <li>🎓 <span class="news-date">Sep 2024</span> — I will be starting my master's degree at Yonsei!</li>
         </ul>
       </td>
     </tr>
   </tbody>
 </table>
+
+<!-- ───────────── Affiliations ─────────────
+     TODO: drop logo PNGs into images/affiliations/:
+       yonsei.png, cmu.png, lg-ai-research.png, upenn.png
+     If a logo is missing, a styled placeholder shows the name. -->
+<table class="section-wrap" style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+  <tbody>
+    <tr>
+      <td style="padding:16px;">
+        <h2>Affiliations</h2>
+        <div class="affiliations">
+
+          <div class="aff-card">
+            <div class="aff-logo">
+              <img src="images/YonseiUniversityEmblem.svg.png" alt="Yonsei University"
+                   onerror="this.outerHTML='&lt;div class=&quot;aff-placeholder&quot;&gt;Yonsei University&lt;/div&gt;'">
+            </div>
+            <div class="aff-text">
+              <div class="aff-role">B.S. in EEE</div>
+              <div class="aff-where">Yonsei University</div>
+              <span class="aff-date">Mar 2018 – Aug 2024</span>
+            </div>
+          </div>
+
+          <div class="aff-card">
+            <div class="aff-logo">
+              <img src="images/YonseiUniversityEmblem.svg.png" alt="Yonsei University"
+                   onerror="this.outerHTML='&lt;div class=&quot;aff-placeholder&quot;&gt;Yonsei University&lt;/div&gt;'">
+            </div>
+            <div class="aff-text">
+              <div class="aff-role">Research Intern</div>
+              <div class="aff-where">Yonsei University</div>
+              <div class="aff-pi">PI: <a href="https://yj-yu.github.io/home/">Youngjae Yu</a></div>
+              <span class="aff-date">Sep 2024 – Sep 2025</span>
+            </div>
+          </div>
+
+          <div class="aff-card">
+            <div class="aff-logo">
+              <img src="images/CMU_logo_stack_cmyk_red.jpg" alt="Carnegie Mellon University"
+                   onerror="this.outerHTML='&lt;div class=&quot;aff-placeholder&quot;&gt;Carnegie Mellon&lt;/div&gt;'">
+            </div>
+            <div class="aff-text">
+              <div class="aff-role">Visiting Researcher</div>
+              <div class="aff-where">CUBE Lab, CMU</div>
+              <div class="aff-pi">PI: <a href="https://www.laszlojeni.com/">Laszlo A. Jeni</a></div>
+              <span class="aff-date">Aug 2025 – Feb 2026</span>
+            </div>
+          </div>
+
+          <div class="aff-card">
+            <div class="aff-logo aff-logo--wide">
+              <img src="images/LG%20AI%20Research_LOGO_E_BASIC.png" alt="LG AI Research"
+                   onerror="this.outerHTML='&lt;div class=&quot;aff-placeholder&quot;&gt;LG AI Research&lt;/div&gt;'">
+            </div>
+            <div class="aff-text">
+              <div class="aff-role">Research Intern</div>
+              <div class="aff-where">Physical Intelligence Team</div>
+              <span class="aff-date">Mar 2026 – Aug 2026</span>
+            </div>
+          </div>
+
+          <div class="aff-card">
+            <div class="aff-logo">
+              <img src="images/UniversityofPennsylvania_FullLogo_RGB.png" alt="University of Pennsylvania"
+                   onerror="this.outerHTML='&lt;div class=&quot;aff-placeholder&quot;&gt;UPenn&lt;/div&gt;'">
+            </div>
+            <div class="aff-text">
+              <div class="aff-role">Ph.D. Student</div>
+              <div class="aff-where">University of Pennsylvania</div>
+              <span class="aff-date">Starting Aug 2026</span>
+            </div>
+          </div>
+
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
             <!-- ───────────── Research interests ───────────── -->
-<table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+<table class="section-wrap" style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
   <tbody>
     <tr>
       <td style="padding:16px;">
@@ -120,11 +224,14 @@
   </tbody>
 </table>
 
-       <!-- ───────────── papers ───────────── -->     
-<table style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
+       <!-- ───────────── papers ───────────── -->
+<table class="section-wrap" style="width:100%;border:0;border-spacing:0;border-collapse:separate;margin:0 auto;">
               <tbody>
-                
                 <tr>
+                  <td colspan="2" style="padding:16px 16px 0;"><h2>Publications</h2></td>
+                </tr>
+
+                <tr class="paper-row">
                   <td style="padding:16px;width:20%;vertical-align:middle;">
                     <img src="images/comming_soon.jpg" class="paper-img" alt="Pri4R thumbnail">
                   </td>
@@ -133,12 +240,12 @@
                       <span class="papertitle">JointHOI: Jointly Generating Contact Maps Enhances Hand Object Interaction Generation</span>
                     </a><br>
                    Mingyeong Song, <strong>Jungbin Cho</strong>, Jisoo Kim, Ananya Bal, Kartik Sharma, Youngjae Yu, Laszlo A. Jeni, Junhyug Noh<br>
-                    <em>preprint</em>
+                    <span class="venue-badge venue-badge--preprint">preprint</span>
                     <p>Co-generating contact maps along with hand object interactions.</p>
                   </td>
                 </tr>
-                
-                <tr>
+
+                <tr class="paper-row">
                   <td style="padding:16px;width:20%;vertical-align:middle;">
                     <img src="images/pri4r.png" class="paper-img" alt="Pri4R thumbnail">
                   </td>
@@ -147,12 +254,12 @@
                       <span class="papertitle">Pri4R: Learning World Dynamics for Vision-Language-Action Models with Privileged 4D Representation</span>
                     </a><br>
                     Jisoo Kim*, <strong>Jungbin Cho*</strong>, Sanghyeok Chu, Ananya Bal, Jinhyung Kim, Gunhee Lee, Sihaeng Lee, Seung Hwan Kim, Bohyung Han, Hyunmin Lee, <a href="https://www.laszlojeni.com/">Laszlo A. Jeni</a>, Seungryong Kim<br>
-                    <em>preprint</em>
+                    <span class="venue-badge venue-badge--preprint">preprint</span>
                     <p>Endowing world dynamics awareness to Vision Language Action models using 3D point tracking.</p>
                   </td>
                 </tr>
 
-                <tr>
+                <tr class="paper-row">
                   <td style="padding:16px;width:20%;vertical-align:middle;">
                     <img src="images/AlignHOI.png" class="paper-img" alt="AlignHOI thumbnail">
                   </td>
@@ -161,12 +268,12 @@
                       <span class="papertitle">AlignHOI: Hand–Object Reconstruction via Alignment and Refinement</span>
                     </a><br>
                     Liting Wen, Xin Lv, <strong>Jungbin Cho</strong>, <a href="https://www.laszlojeni.com/">Laszlo A. Jeni</a>, Xiao-Xiao Long<br>
-                    <em>preprint</em>
+                    <span class="venue-badge venue-badge--preprint">preprint</span>
                     <p>Reconstructing hand object interactions from monocular videos.</p>
                   </td>
                 </tr>
 
-                <tr>
+                <tr class="paper-row">
                   <td style="padding:16px;width:20%;vertical-align:middle;">
                     <img src="images/scene-adapt.png" class="paper-img" alt="SceneAdapt thumbnail">
                   </td>
@@ -181,12 +288,12 @@
                     <a href="https://faculty.ucmerced.edu/mhyang/">Ming-Hsuan Yang</a>,
                     <a href="https://yj-yu.github.io/home/">Youngjae Yu</a>, 
                     <a href="https://sites.google.com/site/seonjookim/">Seonjoo Kim</a><br>
-                    <em>preprint</em>
+                    <span class="venue-badge venue-badge--preprint">preprint</span>
                     <p>Adapting text-to-motion models to become scene-aware using only scene-motion paired data.</p>
                   </td>
                 </tr>
 
-                <tr>
+                <tr class="paper-row paper-row--highlight">
                   <td style="padding:16px;width:20%;vertical-align:middle;">
                     <img src="images/Discord.png" class="paper-img" alt="DisCoRD thumbnail">
                   </td>
@@ -199,12 +306,12 @@
                     <a href="https://www.csehong.com/">Sungeun Hong</a>,
                     <a href="https://ami.postech.ac.kr/members/tae-hyun-oh">Tae-Hyun Oh</a>,
                     <a href="https://yj-yu.github.io/home/">Youngjae Yu</a><br>
-                    <em>ICCV</em> 2025 (✨<strong><em>Highlight</em></strong> 263/11239=2.34%)
+                    <span class="venue-badge venue-badge--accepted">ICCV 2025</span><span class="venue-badge venue-badge--highlight">⭐ Highlight · 2.34%</span>
                     <p>Generating smooth and natural motion by decoding discrete motion tokens with rectified flow.</p>
                   </td>
                 </tr>
 
-                <tr>
+                <tr class="paper-row">
                   <td style="padding:16px;width:20%;vertical-align:middle;">
                     <img src="images/DEEPTalk.png" class="paper-img" alt="DEEPTalk thumbnail">
                   </td>
@@ -217,12 +324,12 @@
                     Jisoo Kim<sup>*</sup>, <strong>Jungbin Cho</strong><sup>*</sup>, Joonho Park,
                     Soonmin Hwang, Da Eun Kim, Geon Kim,
                     <a href="https://yj-yu.github.io/home/">Youngjae Yu</a><br>
-                    <em>AAAI</em> 2025
+                    <span class="venue-badge venue-badge--accepted">AAAI 2025</span>
                     <p>Generating dynamic emotional talking faces using probabilistic embeddings and a temporally hierarchical motion tokenizer.</p>
                   </td>
                 </tr>
 
-                <tr>
+                <tr class="paper-row">
                   <td style="padding:16px;width:20%;vertical-align:middle;">
                     <img src="images/EgoSpeak.png" class="paper-img" alt="EgoSpeak thumbnail">
                   </td>
@@ -235,12 +342,12 @@
                     Junhyeok Kim, Minsoo Kim, Jiwan Chung, <strong>Jungbin Cho</strong>,
                     Jisoo Kim, Sungwoong Kim, Gyeongbo Sim,
                     <a href="https://yj-yu.github.io/home/">Youngjae Yu</a><br>
-                    <em>NAACL Findings</em> 2025
+                    <span class="venue-badge venue-badge--accepted">NAACL Findings 2025</span>
                     <p>Detecting when to speak.</p>
                   </td>
                 </tr>
 
-                <tr>
+                <tr class="paper-row">
                   <td style="padding:16px;width:20%;vertical-align:middle;">
                     <img src="images/AVIN-Chat.png" class="paper-img" alt="AVIN-Chat thumbnail">
                   </td>
@@ -252,12 +359,12 @@
                     </a><br>
                     Chanhyuk Park<sup>*</sup>, <strong>Jungbin Cho</strong><sup>*</sup>,
                     Junwan Kim<sup>*</sup>, Seongmin Lee, Jungsu Kim, Sanghoon Lee<br>
-                    <em>IJCAI Demo</em> 2024
+                    <span class="venue-badge venue-badge--accepted">IJCAI Demo 2024</span>
                     <p>A chatbot system designed for face-to-face interactions, featuring customizable virtual avatars for personalized conversations.</p>
                   </td>
                 </tr>
 
-                <tr>
+                <tr class="paper-row">
                   <td style="padding:16px;width:20%;vertical-align:middle;">
                     <img src="images/VSCHH.png" class="paper-img" alt="VSCHH thumbnail">
                   </td>
@@ -269,7 +376,7 @@
                     </a><br>
                     Youngkyoon Jang, ..., Hyeseong Kim, <strong>Jungbin Cho</strong>, Dosik Hwang,
                     ..., Stefanos Zafeiriou<br>
-                    <em>ICCV Workshop</em> 2023
+                    <span class="venue-badge venue-badge--accepted">ICCV Workshop 2023</span>
                     <p>Reconstructing high-resolution 3D human heads from sparse input views.</p>
                   </td>
                 </tr>
@@ -372,7 +479,7 @@
                     Jisoo Kim<sup>*</sup>, <strong>Jungbin Cho</strong><sup>*</sup>, Joonho Park,
                     Soonmin Hwang, Da Eun Kim, Geon Kim,
                     <a href="https://yj-yu.github.io/home/">Youngjae Yu</a><br>
-                    <em>AAAI</em> 2025
+                    <span class="venue-badge venue-badge--accepted">AAAI 2025</span>
                     <p>Generating dynamic emotional talking faces using probabilistic embeddings and a temporally hierarchical motion tokenizer.</p>
                   </td>
                 </tr> -->
@@ -391,7 +498,7 @@
                     Junhyeok Kim, Minsoo Kim, Jiwan Chung, <strong>Jungbin Cho</strong>,
                     Jisoo Kim, Sungwoong Kim, Gyeongbo Sim,
                     <a href="https://yj-yu.github.io/home/">Youngjae Yu</a><br>
-                    <em>NAACL Findings</em> 2025
+                    <span class="venue-badge venue-badge--accepted">NAACL Findings 2025</span>
                     <p>Detecting when to speak.</p>
                   </td>
                 </tr> -->
@@ -409,7 +516,7 @@
                     </a><br>
                     Chanhyuk Park<sup>*</sup>, <strong>Jungbin Cho</strong><sup>*</sup>,
                     Junwan Kim<sup>*</sup>, Seongmin Lee, Jungsu Kim, Sanghoon Lee<br>
-                    <em>IJCAI Demo</em> 2024
+                    <span class="venue-badge venue-badge--accepted">IJCAI Demo 2024</span>
                     <p>A chatbot system designed for face-to-face interactions, featuring customizable virtual avatars for personalized conversations.</p>
                   </td>
                 </tr> -->
@@ -427,7 +534,7 @@
                     </a><br>
                     Youngkyoon Jang, ..., Hyeseong Kim, <strong>Jungbin Cho</strong>, Dosik Hwang,
                     ..., Stefanos Zafeiriou<br>
-                    <em>ICCV Workshop</em> 2023
+                    <span class="venue-badge venue-badge--accepted">ICCV Workshop 2023</span>
                     <p>Reconstructing high-resolution 3D human heads from sparse input views.</p>
                   </td>
                 </tr>
@@ -455,10 +562,29 @@
 
              <div style="width: 300px; margin: 50px auto 0 auto;">
             <script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=i6ZNv3vJc-2hGXjAGkNz5Zen_NpKwT7kpk1t2ZhwWZo"></script>
-            </div> 
+            </div>
           </td>
         </tr>
       </tbody>
     </table>
+
+    <!-- Dark-mode toggle wiring -->
+    <script>
+      (function () {
+        var html = document.documentElement;
+        var btn = document.getElementById('themeToggle');
+        function syncIcon() {
+          btn.textContent = html.getAttribute('data-theme') === 'dark' ? '☀️' : '🌙';
+        }
+        syncIcon();
+        btn.addEventListener('click', function () {
+          var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          if (next === 'dark') html.setAttribute('data-theme', 'dark');
+          else html.removeAttribute('data-theme');
+          localStorage.setItem('theme', next);
+          syncIcon();
+        });
+      })();
+    </script>
   </body>
 </html>
