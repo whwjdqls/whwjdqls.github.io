@@ -76,6 +76,8 @@
   --accent: #011F5B;          /* Penn Blue */
   --accent-hover: #990000;    /* Penn Red */
   --accent-soft: rgba(1, 31, 91, 0.07);
+  --link-color: #990000;      /* Penn Red for stronger contrast on light backgrounds */
+  --link-hover: #011F5B;      /* Penn Blue */
   --code-font: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --ui-font: 'Inter', 'Lato', Verdana, Helvetica, sans-serif;
   --display-font: 'Crimson Pro', 'Times New Roman', Georgia, serif;
@@ -90,6 +92,8 @@ html[data-theme="dark"] {
   --accent: #7BB1E8;          /* lightened Penn Blue for dark bg */
   --accent-hover: #ff8888;    /* lightened Penn Red for dark bg */
   --accent-soft: rgba(123, 177, 232, 0.10);
+  --link-color: #7BB1E8;
+  --link-hover: #ff8888;
 }
 
 html, body {
@@ -99,14 +103,14 @@ html, body {
 }
 
 a {
-  color: var(--accent);
+  color: var(--link-color);
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 a:focus,
 a:hover {
-  color: var(--accent-hover);
+  color: var(--link-hover);
   text-decoration: none;
 }
 
