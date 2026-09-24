@@ -76,8 +76,8 @@
   --accent: #011F5B;          /* Penn Blue */
   --accent-hover: #990000;    /* Penn Red */
   --accent-soft: rgba(1, 31, 91, 0.07);
-  --link-color: #990000;      /* Penn Red for stronger contrast on light backgrounds */
-  --link-hover: #011F5B;      /* Penn Blue */
+  --link-color: #011F5B;      /* Penn Blue */
+  --link-hover: #990000;      /* Penn Red */
   --code-font: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --ui-font: 'Inter', 'Lato', Verdana, Helvetica, sans-serif;
   --display-font: 'Crimson Pro', 'Times New Roman', Georgia, serif;
@@ -104,6 +104,7 @@ html, body {
 
 a {
   color: var(--link-color);
+  font-weight: 500;
   text-decoration: none;
   transition: color 0.15s ease;
 }
@@ -241,7 +242,19 @@ html[data-theme="dark"] .venue-badge--highlight {
 }
 
 /* ── News list ── */
-.news-list { list-style-type: none; margin: 0; padding-left: 0; }
+.news-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0 12px 0 0;
+  max-height: 220px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+.news-list:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 .news-list li {
   margin-bottom: 8px;
   padding-left: 0;
