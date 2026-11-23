@@ -26,6 +26,43 @@
         height: auto;       /* preserve aspect ratio */
         object-fit: contain;
       }
+
+      .seemo-preview {
+        display: inline-block;
+        position: relative;
+      }
+
+      .seemo-preview .paper-img {
+        display: block;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        .seemo-preview .paper-img {
+          transform-origin: left center;
+          transition: transform 160ms ease-out;
+        }
+
+        .seemo-preview:is(:hover, :focus-visible) {
+          z-index: 1;
+        }
+
+        .seemo-preview:is(:hover, :focus-visible) .paper-img {
+          transform: scale(var(--seemo-preview-scale, 2.4));
+          box-shadow: 0 6px 20px rgb(0 0 0 / 28%);
+        }
+      }
+
+      @media (max-width: 479px) {
+        .seemo-preview {
+          --seemo-preview-scale: 1.5;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .seemo-preview .paper-img {
+          transition: none;
+        }
+      }
     </style>
 
     <!-- Theme preference: apply before paint to avoid flash -->
@@ -242,7 +279,7 @@
                 <!-- SeeMo / HWM preprint -->
                 <tr class="paper-row">
                   <td style="padding:16px;width:20%;vertical-align:middle;">
-                    <a href="https://drive.google.com/file/d/1PJEiiZF0eR5xrtnnF3JEEY7sAecWRfGQ/view?usp=sharing">
+                    <a class="seemo-preview" href="https://drive.google.com/file/d/1PJEiiZF0eR5xrtnnF3JEEY7sAecWRfGQ/view?usp=sharing">
                       <img src="images/seemo_demo.gif"
                            class="paper-img" alt="SeeMo demo of egocentric video and 3D human motion"
                            width="384" height="200" loading="lazy">
