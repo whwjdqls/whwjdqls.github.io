@@ -27,39 +27,44 @@
         object-fit: contain;
       }
 
-      .seemo-preview {
-        display: inline-block;
-        position: relative;
-      }
-
-      .seemo-preview .paper-img {
-        display: block;
-      }
-
       @media (hover: hover) and (pointer: fine) {
-        .seemo-preview .paper-img {
-          transform-origin: left center;
+        img {
+          --image-zoom: 1.5;
+          position: relative;
           transition: transform 160ms ease-out;
         }
 
-        .seemo-preview:is(:hover, :focus-visible) {
-          z-index: 1;
+        .paper-img {
+          --image-zoom: 2.4;
+          transform-origin: left center;
         }
 
-        .seemo-preview:is(:hover, :focus-visible) .paper-img {
-          transform: scale(var(--seemo-preview-scale, 2.4));
+        .profile-photo {
+          --image-zoom: 1.35;
+          transform-origin: right top;
+        }
+
+        img:hover,
+        a:focus-visible > img {
+          z-index: 2;
+          transform: scale(var(--image-zoom));
+          background-color: var(--bg);
           box-shadow: 0 6px 20px rgb(0 0 0 / 28%);
         }
       }
 
-      @media (max-width: 479px) {
-        .seemo-preview {
-          --seemo-preview-scale: 1.5;
+      @media (hover: hover) and (pointer: fine) and (max-width: 479px) {
+        .paper-img {
+          --image-zoom: 1.5;
+        }
+
+        .aff-logo img {
+          --image-zoom: 1.2;
         }
       }
 
       @media (prefers-reduced-motion: reduce) {
-        .seemo-preview .paper-img {
+        img {
           transition: none;
         }
       }
@@ -135,7 +140,7 @@
                   <!-- Photo column -->
                   <td style="padding:2.5%;width:37%;max-width:37%;vertical-align:middle;">
                     <a href="images/Jungbin_cho_3.jpg">
-                      <img src="images/Jungbin_cho_3.jpg"
+                      <img class="profile-photo" src="images/Jungbin_cho_3.jpg"
                            alt="profile photo"
                            style="width:100%;height:auto;object-fit:contain;">
                     </a>
@@ -279,7 +284,7 @@
                 <!-- SeeMo / HWM preprint -->
                 <tr class="paper-row">
                   <td style="padding:16px;width:20%;vertical-align:middle;">
-                    <a class="seemo-preview" href="https://drive.google.com/file/d/1PJEiiZF0eR5xrtnnF3JEEY7sAecWRfGQ/view?usp=sharing">
+                    <a href="https://drive.google.com/file/d/1PJEiiZF0eR5xrtnnF3JEEY7sAecWRfGQ/view?usp=sharing">
                       <img src="images/seemo_demo.gif"
                            class="paper-img" alt="SeeMo demo of egocentric video and 3D human motion"
                            width="384" height="200" loading="lazy">
